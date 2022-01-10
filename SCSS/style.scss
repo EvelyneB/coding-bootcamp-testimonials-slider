@@ -1,0 +1,254 @@
+$font-base : "Inter", sans-serif;
+
+$color-dark-blue:hsl(240, 38%, 20%);
+$color-grayish-blue:hsl(240, 18%, 77%);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: $font-base;
+    min-height: 100vh;
+}
+
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+}
+
+.main-container{
+    position: relative;
+    flex-direction: column;
+    @include flexcenter;
+    margin: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background: url("../images/pattern-curve.svg") bottom left no-repeat;
+    background-size: 100%;
+  
+
+.container{
+    @include flexcenter;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.6rem;
+}
+
+.slider{
+    background: url("../images/pattern-bg.svg") right no-repeat; 
+    background-size: contain;
+    padding: 2rem;
+    position: relative;
+}
+
+.img-container{
+    position: relative;
+    bottom: 0;
+}
+
+.image{
+    width: 100%;
+}
+
+
+ /******************* SLIDER BUTTON ***************/
+.buttons{
+    position: absolute; /* positioned in relation to .main-container */
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%, 24%);
+    
+    display: flex;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 15px #babacf;
+    overflow: hidden;
+}
+
+.button{
+    width: 50%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25% 35%;
+}
+
+#button-previous{
+    background-image: url("../images/icon-prev.svg");
+}
+
+#button-next{
+    background-image: url("../images/icon-next.svg");
+}
+
+.card-text{
+    background: url("../images/pattern-quotes.svg") no-repeat;
+    background-position: center top 10%;
+    background-size: 20%;
+    padding-top: 1rem;    
+}
+
+.testimonial{
+    padding: 1.5rem;
+}
+
+.name{
+    font-size: 1rem;
+    font-weight: 700;
+    display: block;
+    @include flexcenter;
+}
+
+.status{
+    font-size: 1rem;
+    color: $color-grayish-blue;
+    @include flexcenter;
+    padding-bottom: 4rem;
+}
+
+
+@media (min-width: 768px){
+.buttons{
+    left: 68%;
+    transform: translate(-125%, 38%);
+}
+
+.image{
+        width: 50%;
+    }
+
+.card-text{
+    background: none;
+    }
+
+.testimonial{
+    line-height: 2rem;
+    font-size: 1.2rem;
+    padding: 3rem 7rem 2rem 0rem;
+}
+}
+
+
+@media (min-width: 1000px){
+  
+.card-text{
+      transform: translateY(-80%);
+    }
+.testimonial{
+        padding: 2rem 11rem 2rem 0rem; 
+        font-size: 1.5rem;
+    }
+}
+}
+
+ /******************* MEDIA QUERIES 768PX*************************/
+
+@media (min-width: 768px){
+
+.main-container{
+    display: flex;
+    flex-direction: inherit;
+    padding-top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background: none;    
+ }
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    max-width:48rem;
+    background-size: 50%; 
+    position: absolute;
+    top: 50%;
+}
+    
+.slider{
+    background-image: none;
+    position: relative;  
+}
+
+.img-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: -11rem;
+    z-index: 1;
+}
+   
+.image{
+        display: flex;
+        justify-content: flex-end;
+        width: 18rem;
+        height: auto;
+}
+
+.buttons{
+    position: absolute;
+    bottom: -11rem;
+    left: -10rem;
+    left: 58%;
+    z-index: 3;
+}
+
+.card-text{
+    top: 50%;
+    transform: translateY(-72%);
+    z-index: 2;
+    left: 0rem;
+    padding: 14rem 14rem 2rem 3rem;
+    text-align: left;
+    background: none;
+}
+
+.testimonial{
+    background: url("../images/pattern-quotes.svg") no-repeat;
+    background-position: 30% top;
+    background-size: 20%;
+}
+
+.name-position{
+      display: flex;
+      justify-content: flex-start;
+      padding: 0rem 2rem 4rem 0rem;
+      background: url("../images/pattern-curve.svg") bottom 10% left no-repeat;
+      background-size: 60%;
+}
+
+.status{
+        display: block;
+        margin-left: 0.2rem;
+}
+}
+
+ /******************* MEDIA QUERIES 1000X*************************/
+
+@media (min-width:1000px){
+
+    .container{
+        top: 40%;
+        transform: translateY(-20%);
+        max-width: 58rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
